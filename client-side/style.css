@@ -10,3 +10,9 @@
 body {
     background-color: var(--background);
 }
+
+h1
+{
+	text-align: center;
+	font-size: 60px;
+}
