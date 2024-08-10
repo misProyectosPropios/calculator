@@ -1,4 +1,12 @@
+:root {
+    --background: #EAF2F8;
+}
+
 * {
 	font-family: 'Dancing Script', cursive;
 
+}
+
+body {
+    background-color: var(--background);
 }
