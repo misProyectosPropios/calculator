@@ -38,3 +38,8 @@ h1
 	font-size: 48px;
 	border-radius: 40px;
 }
+
+.table-boton:hover
+{
+	background-color: #FAE5D3;
+}
