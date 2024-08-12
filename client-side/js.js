@@ -59,7 +59,9 @@ function deleteLastText(text) {
 
 //Calculates how much is the calculation
 function calculate(text) {
-    return text
+    if (isEqual(text)) {
+        
+    }
 }
 
 /*
@@ -84,7 +86,7 @@ function isOperation(text) {
 }
 
 function isPoint(text) {
-    res = false
+    let res = false
     if (text == '.') {
         res = true
     }
@@ -94,6 +96,14 @@ function isPoint(text) {
 function isArrowBack(text) {
     let res = false
     if (text == '<-') {
+        res = true
+    }
+    return res
+}
+
+function isEqual(text) {
+    let res = false
+    if (text == '=') {
         res = true
     }
     return res
