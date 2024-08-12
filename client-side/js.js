@@ -60,7 +60,34 @@ function deleteLastText(text) {
 //Calculates how much is the calculation
 function calculate(text) {
     if (isEqual(text)) {
-        
+        // Se fija si se puede hacer la operacion
+				texto = esOperable();
+				// Si no se puede hacer la operación, entonces, mostrar ERROR en el visor
+				if (texto == "ERROR")
+				{
+					pantallaEscrita = 1;
+					visor[0].textContent = texto;
+                    return
+				}
+				// SI es operable, entonces separar en terminos
+				terminos = separarTerminos(visor.innerHTML);
+				// Se itera sobre cada termino
+				for (let i = 0; i < terminos.length; i++)
+				{
+					// Se simplifica hasta obtener el resultado de cada termino
+					terminos[i] = simplificarTerminos(terminos[i]);
+				}
+				//Se termina de hacer la operación sumando cada termino
+				nume = sumarTerminos(terminos);
+				if (num % 1 == 0)
+				{
+					visor.innerHTML = nume;
+				}
+				else
+				{
+					visor.innerHTML = nume.toFixed(3);
+				}
+				pantallaEscrita = 1;
     }
 }
 
@@ -121,3 +148,36 @@ function isNumber(text) {
 	}		
 	return res;
 }
+
+//Adds 2 numbers
+function add(number1, number2) {
+    return number1 + number2
+}
+
+//Substracts 2 numbers
+function subtraction(number1, number2) {
+    return number1 - number2
+}
+
+//Multiply 2 numbers 
+function multiply(number1, number2) {
+    return number1 * number2
+}
+
+//Divide 2 numbers
+function divide(number1, number2) {
+    return number1 / number2
+}
+
+//Returns the squareRoot of num
+function squareRoot(num)
+{
+	return Math.sqrt(num);
+}
+
+//Returns num1 divided by 100
+function percentage(num1)
+{
+	return num1 / 100;
+}
+
